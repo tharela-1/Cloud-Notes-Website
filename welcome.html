@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Notes Website</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="head">
+        <span class="title">Cloud Notes Website - Welcome Page</span>
+    </div>
+    <marquee style="font-family: monospace; font-size: 17px;">Welcome to the Cloud Notes website!
+        By using this website, <b>you agree to the <a href="/help">Privacy Policy</a>, the 
+        <a href="/help">Terms of Service</a> and the <a href="/help">License Terms</a></b> of this website. 
+        See the <b><a href="/help">Help Page</a></b> for more details. 
+        Your feedback is very valuable. 
+        Give your valuable feedback to help this website to work even better 
+        in the <a href="/feedback">Feedback Page</a>.
+    </marquee>
+    <hr class="line">
+    <span class="welcomeText">Welcome to the Cloud Notes website!</span>
+    <br><br>
+    <span class="welcomeText">Here you can share and store the data in a very safe way. 
+    </span>
+    <br><br>
+    <span class="welcomeText">You can go and access the home page by clicking on the button 
+        given here:
+    </span>
+    <button class="actionObj" id="startAction" class = "introClass" 
+    onclick="window.location.href='/home';">Go to Home Page</button>
+    <br><br>
+    <span class="welcomeText">    
+    You can set the following details as well:
+    </span><br>
+    <ol class="welcomeText">
+        <li>Message to be stored</li>
+        <li>Password to open the message</li>
+    </ol>
+    <br>
+    <span class="welcomeText">
+        By default, the notes created will have a Time To Live (TTL) of 1 year from the time of creation.
+        Whenever it gets accessed correctly using the correct id and the correct password, the TTL gets updated to 1 year 
+        from the last accessed time.
+        <br>
+        Also, if you want to do instant deletion of your note you can go to the Delete Tab in the 
+        home Page and enter the required details there. If all the details are correct, then instant 
+        deletion of the note will be done.
+    </span>
+    <br><br>
+    <span class="welcomeText">You can go and access the feedback page by clicking on the button 
+        given here:
+    </span>
+    <button class="actionObj" id="feedbackPage" class="introClass" 
+    onclick="window.location.href='/feedback';">Go to Feedback Page</button>
+    <br><br>
+    <span class="welcomeText">You can go and access the help page by clicking on the button 
+        given here:
+    </span>
+    <button class="actionObj" id="helpPage" class = "introClass"
+    onclick="window.location.href='/help';">Go to Help Page</button>
+    <br><br>
+    <span class="welcomeText">You can go and access the source code by clicking on the button 
+        given here:
+    </span>
+    <button class="actionObj" id="srcCode" class = "introClass"
+    onclick="window.location.href='https://github.com/tharela-1/Secure-Online-Clipboard';">
+    Go to Source Code</button>
+    <br><br>
+    <span class="welcomeText">By using this website, <b>you agree to the 
+        <a href="/help">Privacy Policy</a>, the <a href="/help">Terms of Service</a> and the 
+        <a href="/help">License Terms</a></b> 
+        of it. 
+        See the <b><a href="/help">Help Page</a></b> for more details. 
+        Your feedback is very valuable. 
+        Give your valuable feedback to help this website to work even 
+        better in the <b><a href="/feedback">Feedback Page</a></b>.
+    </span>
+    <br><br>
+    <script src="script.js"></script>
+</body>
+</html>

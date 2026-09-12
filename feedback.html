@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Notes Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="head">
+        <span class="title">Cloud Notes Website - Feedback Page</span>
+        <div style="display: flex; justify-content: flex-end">
+            <button class="tools" id="help" onclick="window.location.href='/home';">Home</button>
+        </div>
+    </div>
+    <marquee style="font-family: monospace; font-size: 17px;">Welcome to the Cloud Notes website!
+        By using this website, <b>you agree to the <a href="/help">Privacy Policy</a>, the 
+        <a href="/help">Terms of Service</a> and the <a href="/help">License Terms</a></b> of this website. 
+        See the <b><a href="/help">Help Page</a></b> for more details. 
+        Your feedback is very valuable. 
+        Give your valuable feedback to help this website to work even better 
+        in the <a href="/feedback">Feedback Page</a>.
+    </marquee>
+    <hr class="line">
+    <span class="heading">NOTE: The fields marked with <span style="color: red">*</span> are required fields.</span>
+    <br>
+    <hr class="line">
+    <div class = "container2">
+        <form method="POST" onsubmit="sendFeedback(event)">
+            <label class="listObj" for="feedback">Enter the feedback that you would like to 
+                give (max 1000 characters)<span style="color: red">*</span></label>
+            <br><br>
+            <textarea required name="feedback" class="longListObj"
+                rows="15" cols="88" maxlength="1000"
+                oninput= "if(this.value.length>1000){this.value = this.value.slice(0,1000)}"
+                placeholder="Enter Text here..." id="feedback"></textarea>
+            <br>
+            <button class="actionObj" id="feedback-button">Send Feedback</button>
+        </form>
+        <br>
+        <span class="heading">By using this website you agree to the 
+            Terms of Service, Privacy Policy and the License Terms of it.</span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

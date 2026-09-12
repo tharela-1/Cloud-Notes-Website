@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Notes Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="head">
+        <span class="title">Cloud Notes Website - Home Page</span>
+        <div style="display: flex; justify-content: flex-end">
+            <button class="tools" id="help" onclick="window.location.href='/help';">Help</button>
+        </div>
+    </div>
+    <marquee style="font-family: monospace; font-size: 17px;">Welcome to the Cloud Notes Website!
+        By using this website, <b>you agree to the <a href="/help">Privacy Policy</a>, the 
+        <a href="/help">Terms of Service</a> and the <a href="/help">License Terms</a></b> of this website. 
+        See the <b><a href="/help">Help Page</a></b> for more details. 
+        Your feedback is very valuable. 
+        Give your valuable feedback to help this website to work even better 
+        in the <a href="/feedback">Feedback Page</a>.
+    </marquee>
+    <hr class="line">
+    <div class="tabs">
+        <button onclick="showSenderSection()" class="actionObj" id="senderTab">Create</button>
+        <button onclick="showReaderSection()" class="actionObj" id="readerTab">Read</button>
+        <button onclick="showUpdateSection()" class="actionObj" id="updateTab">Update</button>
+        <button onclick="showRevokeSection()" class="actionObj" id="revokeTab">Delete</button>
+    </div>
+    <div class="container">
+        <div class="field" id="senderSectionComponent">
+            <div class="divSecHead">
+                <span class="secHead">Create Section</span>
+            </div>
+            <hr class="line">
+            <span class="heading">NOTE: The notes that you create is valid for a time of 1 year from the time of creation. 
+                If you access the note by doing either read / update operation then the note's validity gets updated to 1 year 
+                from the last accessed time.
+                The fields marked with <span style="color: red">*</span> are required fields.
+            </span>
+            <br>
+            <hr class="line">
+            <form method = "POST" onsubmit = "createNote(event)">
+                <label for="sendText" class = "listObj">Enter the text that has to be sent (max 5000 characters)
+                    <br>
+                    <b>NOTE: Some text must be sent. It can't be empty and it can't contain only whitespaces.</b>
+                    <span style="color: red">*</span></label>
+                <br>
+                
+                <textarea required name="sendText" 
+                class = "longListObj" rows="11" cols="88" maxlength="5000"
+                oninput= "if(this.value.length>5000){this.value = this.value.slice(0,5000)}"
+                placeholder="Enter Text here" id="sendContent"></textarea>
+                <br>
+                <div id="charCount" align="right"></div>
+                <br>
+
+                <label for="sendPass" class = "listObj">
+                    Enter the Sender's Passcode (max 64 characters)
+                    <span style="color: red">*</span>
+                    <br>
+                    <b style="font-size: 14px;">NOTE: If you press the Show Password button 
+                        the password that you have typed is visible for 5.5 seconds. During the view time, editing 
+                        is disabled to prevent accidental changes. After that the password is hidden and you can edit again.
+                    </b>
+                </label>
+                <br>
+                
+                <input required name="sendPass" class="listObj" type="password" maxlength="64" 
+                oninput= "if(this.value.length>64){this.value = this.value.slice(0,64)}" 
+                placeholder="Enter the password here" id="sendPassword">
+                
+                <button type="button" onclick="showPassword1()" class="actionObj" id="showPwd1">Show Password</button>
+                <br><br>
+                <hr class="line">
+                <button class="actionObj" id="send1">Create Note</button>
+                <input type="reset" class="actionObj" id="reset1">
+                <br><br>
+                <hr class="line">
+                <span class="heading">Output:</span>
+                <br><br>
+                <label for="sendCode" class="listObj">Your Note ID is:</label>
+                <br>
+                <input type="number" class="listObj" 
+                placeholder="Get the Note ID here"
+                readonly id="sendCode" name="sendCode">
+                <br>
+                <button type="button" onclick = "copyFn2()" class="actionObj" id="copy2">Copy Note ID</button>
+                <br><br>
+                <label for="revokeCode" class="listObj">Your revoke ID is:
+                  <br>
+                  <b>NOTE: This ID is important if you want to do the Instant Deletion of your note. 
+                    You can do that in the Revoke Tab.</b>
+                </label>
+                <br>
+                <input type="number" class="listObj" 
+                placeholder="Get the Revoke ID here"
+                readonly id="revokeCode" name="revokeCode">
+                <br>
+                <button type = "button" onclick = "copyFn3()" class="actionObj" id="copy3">Copy Revoke ID</button>
+                <br><br>
+                <label for="updateCode" class="listObj">Your update ID is:
+                  <br>
+                  <b>NOTE: This ID is important if you want to Update the contents of your note. 
+                    You can do that in the update tab.</b>
+                </label>
+                <br>
+                <input type="number" class="listObj" 
+                placeholder="Get the Update ID here"
+                readonly id="updateCode" name="updateCode">
+            </form>
+            <button onclick = "copyFn4()" class="actionObj" id="copy4">Copy Update ID</button>
+            <br><br>
+            <hr class="line">
+            <div class="divSecHead">
+                <span class="secHead">Links</span>
+            </div>
+            <hr class="line">
+            <br>
+            <span class="heading">Send Feedback to the developer:</span>
+            <button class="actionObj" id="feedback4" onclick="window.location.href='/feedback';">Send Feedback</button>
+            <br>
+            <span class="heading">See the source code of this website:</span>
+            <button class="actionObj" id="code4" onclick="window.location.href='https://github.com/tharela-1/Secure-Online-Clipboard';">
+                Source Code</button>
+            <br>
+            <span class="heading">Go back to the Welcome Page:</span>
+            <button class="actionObj" id="welcome4" onclick="window.location.href='/welcome';">Welcome Page</button>
+            <br><br>
+            <span class="heading">By using this website you agree to the 
+                <a href="/help">Privacy Policy</a>, the <a href="/help">Terms of Service</a> and the <a href="/help">License Terms</a> 
+                of it.</span>
+            <br><br>
+        </div>
+        <div class="field" id="readerSectionComponent">
+            <div class="divSecHead">
+                <span class="secHead">Read Section</span>
+            </div>
+            <hr class="line">
+            <span class="heading">NOTE: The fields marked with <span style="color: red">*</span> are required fields.
+            <br>
+            <hr class="line">
+            <span class="heading">Retrieval Section:</span>
+            <br><br>
+            <form method="POST" onsubmit="readNote(event)">
+                <label for="retCode" class = "listObj">Enter the Note ID(8 - digit)
+                    <span style="color: red">*</span></label>
+                <br>
+
+                <input name="retCode" type="number" required 
+                placeholder="Enter Note ID here" class="listObj" id="clipID"></input>
+                <br><br>
+
+                <label for="retPass" class = "listObj">Enter the password (max 64 characters)
+                    <span style="color: red">*</span></label>
+                    <br>
+                    <b style="font-size: 14px;">NOTE: If you press the Show Password button 
+                        the password that you have typed is visible for 5.5 seconds. During the view time, editing 
+                        is disabled to prevent accidental changes. After that the password is hidden and you can edit again.
+                    </b>
+                <br>
+
+                <input name="retPass" type="password" required 
+                placeholder="Enter the password here" class="listObj" 
+                oninput= "if(this.value.length>64){this.value = this.value.slice(0,64)}"
+                id="clipPass" maxlength="64">
+                </input>
+
+                <button type="button" onclick="showPassword2()" class="actionObj" id="showPwd2">Show Password</button>
+
+                <br>
+
+                <button class="actionObj" id="retreive1">Read Note</button>
+                
+                <input type="reset" class="actionObj" id="reset2">
+                <br><br>
+                <label for="resultObj" class="listObj">Retrieved Text:</label>
+                <br>
+
+                <textarea rows="11" cols="88" name="resultObj" readonly 
+                    placeholder="Your retrieved text will be shown here" 
+                    class = "longListObj" id="output"></textarea>
+             </form>
+             <hr class="line">
+            <div class="divSecHead">
+                <span class="secHead">Links</span>
+            </div>
+            <hr class="line">
+            <br>
+            <span class="heading">Send Feedback to the developer:</span>
+            <button class="actionObj" id="feedback2" onclick="window.location.href='/feedback';">Send Feedback</button>
+            <br>
+            <span class="heading">See the source code of this website:</span>
+            <button class="actionObj" id="code2" onclick="window.location.href='https://github.com/tharela-1/Secure-Online-Clipboard';">
+                Source Code</button>
+            <br>
+            <span class="heading">Go back to the Welcome Page:</span>
+            <button class="actionObj" id="welcome2" onclick="window.location.href='/welcome';">Welcome Page</button>
+            <br><br>
+            <span class="heading">By using this website you agree to the 
+                <a href="/help">Privacy Policy</a>, the <a href="/help">Terms of Service</a> and the <a href="/help">License Terms</a> 
+                of it.</span>
+            <br><br>
+        </div>
+        <div class="field" id="updateSectionComponent">
+            <div class="divSecHead">
+                <span class="secHead">Update Section</span>
+            </div>
+            <hr class="line">
+            <span class="heading">NOTE: The fields marked with <span style="color: red">*</span> are required fields.
+            </span>
+            <br>
+            <hr class="line">
+            <form method="POST" onsubmit="updateNote(event)">
+                <label for="retCode" class = "listObj">Enter the Note ID(8 - digit)
+                    <span style="color: red">*</span></label>
+                <br>
+
+                <input name="retCode" type="number" required 
+                placeholder="Enter Note ID here" class="listObj" id="clipID2"></input>
+                <br><br>
+
+                <label for="retPass" class = "listObj">Enter the password (max 64 characters)
+                    <span style="color: red">*</span></label>
+                    <br>
+                    <b style="font-size: 14px;">NOTE: If you press the Show Password button 
+                        the password that you have typed is visible for 5.5 seconds. During the view time, editing 
+                        is disabled to prevent accidental changes. After that the password is hidden and you can edit again.
+                    </b>
+                <br>
+
+                <input name="retPass" type="password" required 
+                placeholder="Enter the password here" class="listObj" 
+                oninput= "if(this.value.length>64){this.value = this.value.slice(0,64)}"
+                id="clipPass2" maxlength="64">
+                </input>
+                <button type="button" onclick="showPassword3()" class="actionObj" id="showPwd3">Show Password</button>
+                <br>
+
+                <label for="updCode" class = "listObj">Enter the update ID(8 - digit)
+                    <span style="color: red">*</span></label>
+                <br>
+                
+                <input name="updCode" type="number" required 
+                placeholder="Enter Update ID here" class="listObj" id="updateID"></input>
+                <br><br>
+
+                <label for="updateText" class = "listObj">Enter the updated text (max 5000 characters)
+                    <span style="color: red">**</span>
+                    <br>
+                    <b>NOTE: If you are updating the note's content then some text must be there to update. 
+                        It can't be empty and it can't contain only whitespaces.</b>
+                    </label>
+                <br>
+                
+                <textarea required name="updateText" 
+                class = "longListObj" rows="11" cols="88" maxlength="5000"
+                oninput= "if(this.value.length>5000){this.value = this.value.slice(0,5000)}"
+                placeholder="Enter Text here" id="updateContent"></textarea>
+                <br>
+                <div id="charCount2" align="right"></div>
+                <br>
+
+                <button class="actionObj" id="update-button">Update Note</button>
+            </form>
+            <br><br>
+            <hr class="line">
+            <div class="divSecHead">
+                <span class="secHead">Links</span>
+            </div>
+            <hr class="line">
+            <br>
+            <span class="heading">Send Feedback to the developer:</span>
+            <button class="actionObj" id="feedback3" onclick="window.location.href='/feedback';">Send Feedback</button>
+            <br>
+            <span class="heading">See the source code of this website:</span>
+            <button class="actionObj" id="code3" onclick="window.location.href='https://github.com/tharela-1/Secure-Online-Clipboard';">
+                Source Code</button>
+            <br>
+            <span class="heading">Go back to the Welcome Page:</span>
+            <button class="actionObj" id="welcome3" onclick="window.location.href='/welcome';">Welcome Page</button>
+            <br><br>
+            <span class="heading">By using this website you agree to the 
+                <a href="/help">Privacy Policy</a>, the <a href="/help">Terms of Service</a> and the <a href="/help">License Terms</a> 
+                of it.</span>
+            <br><br>
+        </div>
+        <div class="field" id="revokeSectionComponent">
+            <div class="divSecHead">
+                <span class="secHead">Delete Section</span>
+            </div>
+            <hr class="line">
+            <span class="heading">NOTE: The fields marked with <span style="color: red">*</span> are required fields.
+            </span>
+            <br>
+            <hr class="line">
+            <form method="POST" onsubmit="deleteNote(event)">
+                <label for="retCode" class = "listObj">Enter the Note ID(8 - digit)
+                    <span style="color: red">*</span></label>
+                <br>
+
+                <input name="retCode" type="number" required 
+                placeholder="Enter Note ID here" class="listObj" id="clipID2"></input>
+                <br><br>
+
+                <label for="retPass" class = "listObj">Enter the password (max 64 characters)
+                    <span style="color: red">*</span></label>
+                    <br>
+                    <b style="font-size: 14px;">NOTE: If you press the Show Password button 
+                        the password that you have typed is visible for 5.5 seconds. During the view time, editing 
+                        is disabled to prevent accidental changes. After that the password is hidden and you can edit again.
+                    </b>
+                <br>
+
+                <input name="retPass" type="password" required 
+                placeholder="Enter the password here" class="listObj" 
+                oninput= "if(this.value.length>64){this.value = this.value.slice(0,64)}"
+                id="clipPass3" maxlength="64">
+                </input>
+                <button type="button" onclick="showPassword4()" class="actionObj" id="showPwd4">Show Password</button>
+                <br>
+
+                <label for="revCode" class = "listObj">Enter the revoke ID(8 - digit)
+                    <span style="color: red">*</span></label>
+                <br>
+
+                <input name="revCode" type="number" required 
+                placeholder="Enter Revoke ID here" class="listObj" id="revokeID"></input>
+                <br><br>
+
+                <button class="actionObj" id="revoke-button">Instant Delete Note</button>
+            </form>
+            <br><br>
+            <hr class="line">
+            <div class="divSecHead">
+                <span class="secHead">Links</span>
+            </div>
+            <hr class="line">
+            <br>
+            <span class="heading">Send Feedback to the developer:</span>
+            <button class="actionObj" id="feedback1" onclick="window.location.href='/feedback';">Send Feedback</button>
+            <br>
+            <span class="heading">See the source code of this website:</span>
+            <button class="actionObj" id="code1" onclick="window.location.href='https://github.com/tharela-1/Secure-Online-Clipboard';">
+                Source Code</button>
+            <br>
+            <span class="heading">Go back to the Welcome Page:</span>
+            <button class="actionObj" id="welcome1" onclick="window.location.href='/welcome';">Welcome Page</button>
+            <br><br>
+            <span class="heading">By using this website you agree to the 
+                <a href="/help">Privacy Policy</a>, the <a href="/help">Terms of Service</a> and the <a href="/help">License Terms</a> 
+                of it.</span>
+            <br><br>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

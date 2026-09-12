@@ -1,0 +1,471 @@
+*{
+    font-family: monospace;
+}
+body, span, h1, h2, h3, h4, h5, h6, p, ul, ol{
+    line-height: 1.5;
+}
+
+body{
+    font-family: monospace;
+    .title{
+        font-size: 24px;
+        font-family: monospace;
+        padding: 10px;
+    }
+    .tools{
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        font-family: monospace;
+        height: 65px;
+        width: 100px;
+        text-decoration: none;
+        color: black;
+    }
+    .head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .listObj{
+        font-size: 14px;
+        font-family: monospace;
+        margin: 5px;
+        height: 25px;
+        width: 90%;
+    }
+    .field{
+        border: 1px solid black;
+        width: 97%;
+        margin: 5px;
+        flex: 1;
+        padding: 5px;
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+    .actionObj{
+        padding: 5px;
+        margin: 10px;
+        font-family: monospace;
+        font-size: 14px;
+    }
+    .longListObj{
+        font-size: 14px;
+        font-family: monospace;
+        margin: 5px;
+        color: blue;
+        width: 90%;
+    }
+    textarea{
+        resize: none;
+    }
+    .heading{
+        font-family: monospace;
+        font-size: 16px;
+        margin-left: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    #reset1:hover{
+        background-color: red;
+        color: white;
+    }
+    #reset2:hover{
+        background-color: red;
+        color: white;
+    }
+    #send1:hover{
+        background-color: green;
+        color: white;
+    }
+    #retreive1:hover{
+        background-color: green;
+        color: white;
+    }
+    #update-button:hover{
+        background-color: green;
+        color: white;
+    }
+    #copy1:hover{
+        background-color: yellow;
+    }
+    #copy2:hover{
+        background-color: yellow;
+    }
+    #copy3:hover{
+        background-color: yellow;
+    }
+    #copy4:hover{
+        background-color: yellow;
+    }
+    #feedback1:hover{
+        background-color: lightblue;
+    }
+    #feedback-button:hover{
+        background-color: green;
+        color: white;
+    }
+    #sendCode{
+        color: green;
+    }
+    #revokeCode{
+        color: red;
+    }
+    #updateCode{
+        color: blue;
+    }
+    #update-button:hover{
+      background-color: blue;
+      color: white;
+    }
+    .welcomeText{
+        font-family: monospace;
+        font-size: 16px;
+    }
+    .introClass{
+        font-family: monospace;
+        font-size: 16px;
+        text-decoration: none;
+        color: black;
+    }
+    #startAction:hover{
+        background-color: green;
+        color: white;
+    }
+    #feedbackPage:hover{
+        background-color: orangered;
+        color: white;
+    }
+    #helpPage:hover{
+        background-color: yellow;
+    }
+    #welcome1:hover{
+        background-color: lightblue;
+    }
+    #mainPage:hover{
+        background-color: magenta;
+    }
+    #feedback1{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #welcome1{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #code1{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #code1:hover{
+        background-color: purple;
+        color: white;
+    }
+    #feedbackPage{
+        font-size:16px;
+    }
+    #helpPage{
+        font-size:16px;
+    }
+    #startAction{
+        font-size: 16px;
+    }
+    #mainPage{
+        font-size: 16px;
+    }
+    #write1:hover{
+        background-color: blue;
+        color: white;
+    }
+    .ttlObj{
+        font-size: 14px;
+        font-family: monospace;
+        margin: 5px;
+        height: 25px;
+        width: 90%;
+    }
+    .separator{
+        font-family: monospace;
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right:10px;
+    }
+    .indent1{
+        margin-left: 32px;
+    }
+    #update:hover{
+        background-color: green;
+        color: white;
+    }
+    #srcCode{
+        font-size: 16px;
+    }
+    #srcCode:hover{
+        background-color: purple;
+        color: white;
+    }
+    #code2{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #code2:hover{
+        background-color: purple;
+        color: white;
+    }
+    #welcome2{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #welcome2:hover{
+        background-color: lightblue;
+    }
+    #feedback2{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #feedback2:hover{
+        background-color: green;
+        color: white;
+    }
+    #code3{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #code3:hover{
+        background-color: purple;
+        color: white;
+    }
+    #welcome3{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #welcome3:hover{
+        background-color: lightblue;
+    }
+    #feedback3{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #feedback3:hover{
+        background-color: green;
+        color: white;
+    }
+    #code4{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #code4:hover{
+        background-color: purple;
+        color: white;
+    }
+    #welcome4{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #welcome4:hover{
+        background-color: lightblue;
+    }
+    #feedback4{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #feedback4:hover{
+        background-color: green;
+        color: white;
+    }
+    #code5{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #code5:hover{
+        background-color: purple;
+        color: white;
+    }
+    #welcome5{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #welcome5:hover{
+        background-color: lightblue;
+    }
+    #feedback5{
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #feedback5:hover{
+        background-color: green;
+        color: white;
+    }
+    #revoke-button:hover{
+      background-color: red;
+      color: white;
+    }
+    /*Button animations
+    1. Use the transform : scale(x) to get the size of the button to the x*100% size of the original size.
+    2. Use opacity to set how light or solid the button is when pressed. 0 -> Light 1 -> Solid*/
+    .actionObj:active{
+        transform: scale(0.97);
+        opacity: 0.95;
+    }
+    .tools:active{
+        transform: scale(0.97);
+        opacity: 0.95;
+    }
+    .tools:hover{
+        transform: scale(1.03);
+    }
+    .actionObj:hover{
+        transform: scale(1.03);
+    }
+    button{
+        transition: transform 0.25s ease;
+    }
+    .secHead{
+        font-family: monospace;
+        font-size: 16px;
+        margin-left: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .divSecHead{
+        text-align: center;
+    }
+    #sendPassword{
+        font-size: 14px;
+        font-family: monospace;
+        margin: 5px;
+        height: 25px;
+        width: 70%;
+    }
+    #clipPass{
+        font-size: 14px;
+        font-family: monospace;
+        margin: 5px;
+        height: 25px;
+        width: 70%;
+    }
+    #showPwd1:hover{
+        background-color: orangered;
+        color: white;
+    }
+    #showPwd2:hover{
+        background-color: orangered;
+        color: white;
+    }
+    #showPwd3:hover{
+        background-color: orangered;
+        color: white;
+    }
+     #showPwd4:hover{
+        background-color: orangered;
+        color: white;
+    }
+    #senderSectionComponent{
+        display: block;
+    }
+    #readerSectionComponent{
+        display: none;
+    }
+    #revokeSectionComponent{
+        display: none;
+    }
+    #updateSectionComponent{
+      display: none;
+    }
+    #loginSectionComponent{
+      display: none;
+    }
+    #resultSectionComponent{
+      display: none;
+    }
+    .tabs{
+        display: flex;
+        justify-content: center;
+    }
+    #senderTab{
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #readerTab{
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #revokeTab{
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #updateTab{
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #loginTab{
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #resultTab{
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        font-family: monospace;
+    }
+    #showPwd1{
+        width: 130px;
+    }
+    #showPwd2{
+        width: 130px;
+    }
+    #showPwd3{
+        width: 130px;
+    }
+    #showPwd4{
+        width: 130px;
+    }
+    #recommend-me-button:hover{
+      background-color: chocolate;
+      color: white;
+    }
+    #recommend-me-button{
+      font-family: monospace;
+      font-size: 16px;
+    }
+    #showClipID{
+      color: green;
+    }
+    #showClipTTL{
+      color: green;
+    }
+    #showClipDate{
+      color: green;
+    }
+    #showClipRID{
+      color: red;
+    }
+    #showClipOID{
+      color: blue;
+    }
+    /*Disables the password view eye symbol from Microsoft Edge and Internet Explorer*/
+    input::-ms-reveal{
+        display: none;
+    }
+    /*Media query to adjust the items in the box items*/
+    @media (max-width: 768px){
+        .container{
+            flex-direction: column;
+        }
+    }
+}
